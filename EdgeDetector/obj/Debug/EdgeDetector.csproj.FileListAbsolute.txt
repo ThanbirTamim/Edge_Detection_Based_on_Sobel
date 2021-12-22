@@ -1,0 +1,10 @@
+D:\Varsity\EdgeDetector\EdgeDetector\bin\Debug\EdgeDetector.exe.config
+D:\Varsity\EdgeDetector\EdgeDetector\bin\Debug\EdgeDetector.exe
+D:\Varsity\EdgeDetector\EdgeDetector\bin\Debug\EdgeDetector.pdb
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.csproj.AssemblyReference.cache
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.Properties.Resources.resources
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.csproj.GenerateResource.cache
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.csproj.CoreCompileInputs.cache
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.exe
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.pdb
+D:\Varsity\EdgeDetector\EdgeDetector\obj\Debug\EdgeDetector.MainForm.resources
