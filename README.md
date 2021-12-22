@@ -4,6 +4,7 @@ You can detect edge of an image using Sobel Algorithm.
 
 ## Implementation 
 Just use these lines of code to get restult
+
 	EdgeDetectorHelper _Detect;
 	Bitmap input_bitmap;
 	string input = @"C:\1.jpeg";
@@ -18,5 +19,6 @@ Just use these lines of code to get restult
 	_Detect.Threshold = 100;
 	_Detect.ApplyFilter();
 	_Detect.Bmp.Save(@"C:\test.jpeg");
+	
 ## Output
 ![CHEESE!](test.png)
