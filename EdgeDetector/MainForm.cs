@@ -38,6 +38,8 @@ namespace EdgeDetector
             InitializeComponent();
         }
 
+        List<Tuple<int, int>> selected_pixels = new List<Tuple<int, int>>();
+
         /// <summary>
         /// The input bitmap
         /// </summary>
@@ -50,7 +52,7 @@ namespace EdgeDetector
         private void Form1_Load(object sender, EventArgs e)
         {
             //sample image must be "jpg, jpeg, bmp, png"
-            string input = @"D:\Varsity\EdgeDetector\Sample Data\1.jpeg";
+            string input = @"D:\Varsity\EdgeDetector\Sample Data\cucumber.jpg";
             input_bitmap = new Bitmap(input);
             pictureBoxInput.Image = input_bitmap;
         }
@@ -77,7 +79,43 @@ namespace EdgeDetector
             _Detect = new EdgeDetectorHelper(EdgeDetectorHelper.FilterType.SobelFilter, gray_image);
             _Detect.Threshold = 100;
             _Detect.ApplyFilter();
-            pictureBoxOutput.Image = _Detect.Bmp;
+            var bmp = _Detect.Bmp;
+
+            //Binarilization
+            int black_pixel = 0, white_pixel = 0;
+            for (int i = 0; i < bmp.Width; i++)
+            {
+                for (int j = 0; j < bmp.Height; j++)
+                {
+                    Color color = bmp.GetPixel(i, j);
+                    int r, g, b;
+                    if (color.R >= 127)
+                        r = 255;
+                    else
+                        r = 0;
+                    if (color.G >= 127)
+                        g = 255;
+                    else
+                        g = 0;
+                    if (color.B >= 127)
+                        b = 255;
+                    else
+                        b = 0;
+                    bmp.SetPixel(i, j, Color.FromArgb(r, g, b));
+
+
+                    if (bmp.GetPixel(i, j) == Color.FromArgb(0, 0, 0))
+                    {
+                        selected_pixels.Add(new Tuple<int, int>(i, j));
+                        black_pixel++;
+                    }
+                    else
+                        white_pixel++;
+
+                }
+            }
+            pictureBoxOutput.Image = bmp;
+            MessageBox.Show($"Total pixel: {bmp.Width * bmp.Height}; Black: {black_pixel}; White: {white_pixel} ");
         }
     }
 }
